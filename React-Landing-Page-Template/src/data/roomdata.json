@@ -1,0 +1,58 @@
+
+{
+    "cities": [
+        
+        
+        {
+            "id":1,
+            "city":"Chennai"
+        },{
+            "id":2,
+            "city":"Mumbai"
+        },{
+            "id":3,
+            "city":"Delhi"
+        }],
+    "rooms": [
+      {
+        "id": 1,
+        "city": "Chennai",
+        "image": "/images/room1.webp",
+        "info": "Comfortable apartment near Marina Beach.",
+        "booked": false
+      },
+      {
+        "id": 2,
+        "city": "Mumbai",
+        "image": "/images/room2.jpg",
+        "info": "Spacious penthouse with a view of the sea.",
+        "booked": false
+      },
+      {
+        "id": 3,
+        "city": "Delhi",
+        "image": "/images/room3.webp",
+        "info": "Luxurious suite in the heart of the city.",
+        "booked": false
+      }
+    ],
+    "bookedRooms": [],
+    "users":[
+        {
+            "id":1,
+            "name":"user1",
+            "contact":"user1",
+            "address":"user1",
+            "email":"user1"
+        },{
+            
+                "id":2,
+                "name":"user2",
+            "contact":"user2",
+            "address":"user2",
+            "email":"user2"
+            
+        }
+    ]
+  }
+  
