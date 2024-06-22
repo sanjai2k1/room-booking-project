@@ -10,6 +10,7 @@ import UserDashBoard from "../components/UserDashBoard";
 import SelectCity from "../Pages/SelectCity";
 import SelectedRooms from "../Pages/SelectedRooms";
 import HomeComp from "../Pages/HomeComp";
+import EditComponent from "../components/EditComponent";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
     ,{
       path:"editandupdate",
       element:<EditandUpdateComponent/>
+    },{
+
+      path:"edit/:id",
+      element:<EditComponent/>
     }
   
   

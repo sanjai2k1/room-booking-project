@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import RoomCard from '../components/RoomCard';
 import data from '../data/roomdata.json'; // Import your data
 import { useLocation } from 'react-router-dom';
+import DbService from '../shared/service/DataBaseService';
 
 const SelectCity = () => {
   const [selectedCity, setSelectedCity] = useState('');
@@ -13,19 +14,14 @@ const SelectCity = () => {
   const addItem = (room) => {
 
     
-    items.push(room)
-   sessionStorage.clear();
-    // const newItem = { name:  {room} };
-    // const newItems = [...items, newItem];
-    // setItems(newItems);
-    sessionStorage.setItem('bookedrooms', JSON.stringify(items));
+    console.log(room)
     // setInputValue('');
   };
   // Function to handle booking a room
   const handleBookRoomClick = (room) => {
     
     
-    addItem(room)
+    DbService.post("bookedRooms",room).then((res)=>{})
     // Pass booked room to parent component
     window.alert('Room Booked Successfully');
   };

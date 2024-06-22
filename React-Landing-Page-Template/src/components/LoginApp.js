@@ -1,23 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import './Login.css'
+import DbService from '../shared/service/DataBaseService';
  const LoginApp = () => {
-//   const [username, setUsername] = useState('');
-//   const [password, setPassword] = useState('');
+
 const [user,setuser]=useState({
     userName:"",
     userPassword:"",
 })
+
+const [users,setusers]=useState()
+const [admins,setAdmins]=useState()
+
+useEffect(()=>{
+
+DbService.get("users").then((res)=>{
+  setusers(res.data)
+})
+DbService.get("admins").then((res)=>{
+  setAdmins(res.data)
+})
+
+},[])
+
+
 const navigate = useNavigate()
 
-//   const handleLogin = (e) => {
-//     e.preventDefault();
-//     // Here you can handle the login logic (e.g., API call, authentication)
-//     console.log(`Username: ${username} Password: ${password}`);
-//     // Reset the form after login
-//     setUsername('');
-//     setPassword('');
-//   };
 const inputChangeHandler=(event)=>
     {
         const {name,value}=event.target;
@@ -30,7 +38,7 @@ const checkData=(event)=>{
             window.alert("Username is Required")
             return false
         }
-    if(!user.userName.trim().match('^[a-zA-Z]{3,20}$'))
+    if(!user.userName.trim().match('^[a-zA-Z0-9]{3,20}$'))
     {
         window.alert("User Name must contain only character min-3 and max-20");
         return false;
@@ -47,8 +55,18 @@ const checkData=(event)=>{
                 return false;
             }    
         // window.alert(JSON.stringify(user)); 
-        navigate("")
-         
+        
+         if(users.find((u)=>u.name===user.userName && u.password === user.userPassword)){
+          navigate("/userdashboard")
+         }
+         else if(admins.find((admin)=>admin.name === user.userName && admin.password === user.userPassword))
+          {
+            navigate("/admindashboard")
+          }
+          else{
+            window.alert("new user ? sign in")
+            navigate("/signup")
+          }
        
 }  
 

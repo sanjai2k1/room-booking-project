@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import DbService from '../shared/service/DataBaseService';
 
 const SelectedRooms = () => {
     const [bookedRooms,setBookedRooms]=useState([])
 
     
     useEffect( ()=>{
-        const fetchData = async () => {
-
-        console.log(typeof sessionStorage.getItem("bookedrooms"))
-        setBookedRooms(JSON.parse(sessionStorage.getItem("bookedrooms")))
-        }
-        fetchData()
+      DbService.get("bookedRooms").then((res)=>{
+        setBookedRooms(res.data)
+      })
     },[])
     
 

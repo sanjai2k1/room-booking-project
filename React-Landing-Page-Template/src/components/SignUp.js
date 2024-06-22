@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './SignUp.css'; // Import external CSS file for styling
 import { Navigate, useNavigate } from 'react-router-dom';
+import DbService from '../shared/service/DataBaseService';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -50,6 +51,12 @@ const checkData=(event)=>{
                 window.alert("Password must contain Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character");
                 return false;
             }    
+
+            DbService.post("users",formData).then((res)=>{
+              
+            })
+
+        
         // window.alert(JSON.stringify(formData)); 
         navigate("/login") 
         

@@ -1,58 +1,171 @@
-
 {
-    "cities": [
-        
-        
-        {
-            "id":1,
-            "city":"Chennai"
-        },{
-            "id":2,
-            "city":"Mumbai"
-        },{
-            "id":3,
-            "city":"Delhi"
-        }],
-    "rooms": [
-      {
-        "id": 1,
-        "city": "Chennai",
-        "image": "/images/room1.webp",
-        "info": "Comfortable apartment near Marina Beach.",
-        "booked": false
-      },
-      {
-        "id": 2,
-        "city": "Mumbai",
-        "image": "/images/room2.jpg",
-        "info": "Spacious penthouse with a view of the sea.",
-        "booked": false
-      },
-      {
-        "id": 3,
-        "city": "Delhi",
-        "image": "/images/room3.webp",
-        "info": "Luxurious suite in the heart of the city.",
-        "booked": false
-      }
-    ],
-    "bookedRooms": [],
-    "users":[
-        {
-            "id":1,
-            "name":"user1",
-            "contact":"user1",
-            "address":"user1",
-            "email":"user1"
-        },{
-            
-                "id":2,
-                "name":"user2",
-            "contact":"user2",
-            "address":"user2",
-            "email":"user2"
-            
-        }
-    ]
-  }
-  
+  "cities": [
+    {
+      "id": "1",
+      "city": "Chennai"
+    },
+    {
+      "id": "2",
+      "city": "Mumbai"
+    },
+    {
+      "id": "3",
+      "city": "Delhi"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "1",
+      "city": "Tiruvallur",
+      "image": "/images/room1.webp",
+      "info": "Comfortable apartment near Marina Beach.",
+      "booked": false,
+      "price": 2000
+    },
+    {
+      "id": "2",
+      "city": "Mumbai",
+      "image": "/images/room2.jpg",
+      "info": "Spacious penthouse with a view of the sea.",
+      "booked": false,
+      "price": 3000
+    },
+    {
+      "id": "3",
+      "city": "Delhi",
+      "image": "/images/room3.webp",
+      "info": "Luxurious suite in the heart of the city.",
+      "booked": false,
+      "price": 400
+    },
+    {
+      "id": "68f3",
+      "city": "dds",
+      "image": "cxc",
+      "info": "xvcx",
+      "price": 0
+    },
+    {
+      "id": "01f0",
+      "city": "dds",
+      "image": "cxc",
+      "info": "xvcx",
+      "price": 0
+    },
+    {
+      "id": "4872",
+      "city": "dds",
+      "image": "cxc",
+      "info": "xvcx",
+      "price": 0
+    },
+    {
+      "id": "21db",
+      "city": "dds",
+      "image": "cxc",
+      "info": "xvcx",
+      "price": 0
+    },
+    {
+      "id": "abc7",
+      "city": "dds",
+      "image": "cxc",
+      "info": "xvcx",
+      "price": 0
+    },
+    {
+      "id": "fabe",
+      "city": "fg",
+      "image": "gg",
+      "info": "vv",
+      "price": 0
+    },
+    {
+      "id": "692d",
+      "city": "fg",
+      "image": "gg",
+      "info": "vv",
+      "price": 0
+    },
+    {
+      "id": "8279",
+      "city": "fg",
+      "image": "gg",
+      "info": "vv",
+      "price": 0
+    },
+    {
+      "id": "fc19",
+      "city": "fg",
+      "image": "gg",
+      "info": "vv",
+      "price": 0
+    }
+  ],
+  "bookedRooms": [
+    {
+      "id": "2",
+      "city": "Mumbai",
+      "image": "/images/room2.jpg",
+      "info": "Spacious penthouse with a view of the sea.",
+      "booked": false,
+      "price": 3000
+    },
+    {
+      "id": "3",
+      "city": "Delhi",
+      "image": "/images/room3.webp",
+      "info": "Luxurious suite in the heart of the city.",
+      "booked": false,
+      "price": 400
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "user1",
+      "contact": "user1",
+      "username": "user1",
+      "email": "user1",
+      "password": "User@2k1"
+    },
+    {
+      "id": "2",
+      "name": "user2",
+      "contact": "user2",
+      "username": "user2",
+      "email": "user2",
+      "password": "User@2k1"
+    },
+    {
+      "id": "0eb9",
+      "name": "dsd",
+      "contact": "9176071379",
+      "email": "sanjai@gmail.com",
+      "username": "dssss",
+      "password": "Sanjai@2k1"
+    }
+  ],
+  "admins": [
+    {
+      "name": "sanjai",
+      "password": "Sanjai@2k1",
+      "id": "94d4"
+    },
+    {
+      "name": "ikfan",
+      "password": "Ikfan@2k1",
+      "id": "29e8"
+    },
+    {
+      "name": "nirmal",
+      "password": "Nirmal@2k1",
+      "id": "39ad"
+    },
+    {
+      "name": "kamalesh",
+      "password": "kamalesh@2k1",
+      "id": "8b5d"
+    }
+  ]
+}

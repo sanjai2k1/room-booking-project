@@ -1,39 +1,48 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Card, CardContent, CardMedia, Typography, CardActions, Button } from '@mui/material';
 import { Box } from '@mui/material';
+import DbService from '../shared/service/DataBaseService';
+import { useNavigate } from 'react-router-dom';
 
-const cards = [
-    {
-      image: 'https://via.placeholder.com/140',
-      name: 'Card 1',
-      description: 'Description for card 1',
-    },
-    {
-      image: 'https://via.placeholder.com/140',
-      name: 'Card 2',
-      description: 'Description for card 2',
-    },
-    {
-      image: 'https://via.placeholder.com/140',
-      name: 'Card 3',
-      description: 'Description for card 3',
-    },
-  ];
-const CardComponent = ({ image, name, description, onEdit, onDelete }) => {
+
+const CardComponent = ({ image, city,info,price,id,setCards}) => {
+  const navigate = useNavigate()
+  const onDelete =(event)=>{
+    DbService.delete("rooms",id).then((res)=>{
+      window.alert("deleted")
+      
+      
+    })
+    DbService.get("rooms").then((res)=>{
+    setCards(res.data)
+    })
+  }
+
+  const onEdit =()=>{
+    navigate(`/admindashboard/edit/${id}`)
+  }
+ 
+
+
+    
     return (
       <Card sx={{ maxWidth: 345 }}>
         <CardMedia
           component="img"
           height="140"
           image={image}
-          alt={name}
+          alt={"img"}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {name}
+         
+          <Typography variant="body1" color="text.secondary">
+            {info}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {description}
+            {city}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {price}
           </Typography>
         </CardContent>
         <CardActions>
@@ -50,18 +59,31 @@ const CardComponent = ({ image, name, description, onEdit, onDelete }) => {
 
 
 const EditandUpdateComponent = () => {
+  const [cards,setCards]=useState()
+
+    useEffect(()=>{
+      DbService.get("rooms").then((res)=>{
+        setCards(res.data)
+      })
+    },[])
+   
   return (
     <div> <Box display="flex" flexWrap="wrap" gap={2}>
-    {cards.map((card, index) => (
+    {cards ? cards.map((card, index) => (
       <CardComponent
         key={index}
         image={card.image}
-        name={card.name}
-        description={card.description}
+        city={card.city}
+        info={card.info}
+        price={card.price}
+        id={card.id}
+        setCards={setCards}
       />
-    ))}
+    )) : <h1>Loading..</h1>}
   </Box></div>
   )
 }
 
 export default EditandUpdateComponent
+
+
