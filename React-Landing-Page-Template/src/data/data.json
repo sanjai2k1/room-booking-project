@@ -1,7 +1,7 @@
 {
   "Header": {
-    "title": "We are a Landing Page",
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo nibh ante facilisis bibendum."
+    "title": "",
+    "paragraph": ""
   },
   "About": {
     "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -20,81 +20,81 @@
   },
   "rooms": [
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/01-large.jpg",
-      "smallImage": "img/portfolio/01-small.jpg"
+      "title": "Standard Room",
+      "largeImage": "img/iloveimg-resized/room 8 large.jpg",
+      "smallImage": "img/iloveimg-resized (1)/room 8 small.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/02-large.jpg",
-      "smallImage": "img/portfolio/02-small.jpg"
+      "title": "Duplex",
+      "largeImage": "img/iloveimg-resized/room 2 large.jpg",
+      "smallImage": "img/iloveimg-resized (1)/room 2 small.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/03-large.jpg",
-      "smallImage": "img/portfolio/03-small.jpg"
+      "title": "Connecting Rooms",
+      "largeImage": "img/iloveimg-resized/room 3 large.jpg",
+      "smallImage": "img/iloveimg-resized (1)/room 3 small.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/04-large.jpg",
-      "smallImage": "img/portfolio/04-small.jpg"
+      "title": "Presidential Suite",
+      "largeImage": "img/iloveimg-resized/room 4 large.jpg ",
+      "smallImage": "img/iloveimg-resized (1)/room 4 small.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/05-large.jpg",
-      "smallImage": "img/portfolio/05-small.jpg"
+      "title": "Bungalow",
+      "largeImage": "img/iloveimg-resized/room 5 large.jpg",
+      "smallImage": "img/iloveimg-resized (1)/room 5 small.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/06-large.jpg",
-      "smallImage": "img/portfolio/06-small.jpg"
+      "title": "Junior Suite",
+      "largeImage": "img/iloveimg-resized/room 6 large.jpg",
+      "smallImage": "img/iloveimg-resized (1)/room 6 small.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/07-large.jpg",
-      "smallImage": "img/portfolio/07-small.jpg"
+      "title": "Executive Room",
+      "largeImage": "img/iloveimg-resized/room 7large.jpg",
+      "smallImage": "img/iloveimg-resized (1)/room 7 small.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/08-large.jpg",
-      "smallImage": "img/portfolio/08-small.jpg"
+      "title": "Penthouse",
+      "largeImage": "img/iloveimg-resized/room 8 large.jpg",
+      "smallImage": "img/iloveimg-resized (1)/room 8 small.jpg"
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/09-large.jpg",
-      "smallImage": "img/portfolio/09-small.jpg"
+      "title": "Deluxe Room",
+      "largeImage": "img/iloveimg-resized/room 5 large.jpg",
+      "smallImage": "img/iloveimg-resized (1)/room 5 small.jpg"
     }
   ],
   "Services": [
     {
       "icon": "fa fa-wordpress",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "name": "Your Stay, Your Way",
+      "text": "Our dedicated concierge team is here to make your stay seamless and unforgettable."
     },
     {
       "icon": "fa fa-cart-arrow-down",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "name": "Savor the Flavors of Location",
+      "text": "Embark on a culinary journey without leaving the hotel. Our award-winning chefs craft"
     },
     {
       "icon": "fa fa-cloud-download",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "name": "Stay Active, Stay Inspired",
+      "text": "Our state-of-the-art fitness center is more than just a gym. We offer a variety of innovative fitness ."
     },
     {
       "icon": "fa fa-language",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "name": "Work Meets Luxury",
+      "text": "For our business travelers, we provide an array of services that combine productivity with luxury."
     },
     {
-      "icon": "fa fa-plane",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "icon": "fa fa-group",
+      "name": "Creating Memorable Moments for All Ages",
+      "text": "We welcome families with open arms, offering services and amenities that cater to guests of all ages."
     },
     {
       "icon": "fa fa-pie-chart",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "name": "Commitment to the Environment",
+      "text": "We are dedicated to sustainable practices that protect our planet while providing luxury experiences"
     }
   ],
   "Testimonials": [
@@ -131,30 +131,30 @@
   ],
   "Team": [
     {
-      "img": "img/team/01.jpg",
+      "img": "img/rocks.jpg",
       "name": "Nirmal Raj S",
       "job": "Director"
     },
     {
-      "img": "img/team/02.jpg",
+      "img": "img/jiii.jpg",
       "name": "Kamalesh Saala",
       "job": "Senior Designer"
     },
     {
-      "img": "img/team/03.jpg",
+      "img": "img/black (1).jpg",
       "name": "Ikfan",
       "job": "Senior Designer"
     },
     {
-      "img": "img/team/04.jpg",
+      "img": "img/js.jpg",
       "name": "Sanjai J",
       "job": "Project Manager"
     }
   ],
   "Contact": {
-    "address": "4321 California St, San Francisco, CA 12345 ",
-    "phone": "+1 123 456 1234",
-    "email": "info@company.com",
+    "address": "H-2, SIPCOT IT Park, Old Mahabalipuram Road, Siruseri, Chennai, Tamil Nadu 603103",
+    "phone": "789654123",
+    "email": "snkm@gmail.com",
     "facebook": "fb.com",
     "twitter": "twitter.com",
     "youtube": "youtube.com"
@@ -162,23 +162,23 @@
   "Home": [
     {
       "icon": "fa fa-comments-o",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "title": "Deluxe Suite",
+      "text": "Experience the height of luxury in our Deluxe Suite, featuring a spacious living area, king-sized bed, and stunning city views."
     },
     {
       "icon": "fa fa-bullhorn",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "title": "Executive Room",
+      "text": "Perfect for business travelers, our Executive Room offers a comfortable workspace, high-speed internet, and access to our exclusive Executive Lounge."
     },
     {
       "icon": "fa fa-group",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "title": "Family Room",
+      "text": "Designed for families, our Family Room includes two queen beds, a cozy seating area, and kid-friendly amenities to ensure a fun and relaxing stay."
     },
     {
       "icon": "fa fa-magic",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "title": "Special Offers",
+      "text": "Book a stay of 3 nights or more and get 20% off, plus complimentary breakfast and spa access."
     }
   ]
 }
