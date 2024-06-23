@@ -11,7 +11,6 @@ import { Contact } from "./components/contact";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import "font-awesome/css/font-awesome.min.css";
 
 import "./App.css";
 import WithLogin from "./components/WithLogin";
