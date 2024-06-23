@@ -60,7 +60,7 @@ const checkData=(event)=>{
                 return false;
             }    
         // window.alert(JSON.stringify(user)); 
-        const isUser = users.find((u)=>u.name===user.userName && u.password === user.userPassword)
+        const isUser = users.find((u)=>u.username===user.userName && u.password === user.userPassword)
          if(isUser){
           setShowuserDashboard(true)
           navigate(`/userdashboard/${isUser.id}`)
@@ -72,7 +72,7 @@ const checkData=(event)=>{
           }
           else{
             window.alert("new user ? sign in")
-            navigate("/signup")
+           
           }
           
        
@@ -113,11 +113,12 @@ if(login)
     ) 
 
   }
-  return (
-    <>
-    
-    
-    </>)
+  const goToLogin =()=>{
+
+    navigate("/login")
+  }
+  
+  return (<>{goToLogin()}</>)
 
  
 };

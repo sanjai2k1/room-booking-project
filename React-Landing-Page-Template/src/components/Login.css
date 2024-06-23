@@ -14,10 +14,10 @@
   .Login_container .Title
   {
     color: cadetblue;
-    background: black;
+   
     border-radius: 40px;
-    font-weight: 600;
-    font-size: 30px;
+    font-weight: 800;
+    font-size: 45px;
   }
   
   .Login_container form {
@@ -31,7 +31,10 @@
   
   .Login_container form  label {
     margin-bottom: 10px;
-    color: honeydew;
+    color: khaki;
+    font-weight: 900;
+    font-size: 20px;
+
     
   }
   
@@ -56,7 +59,7 @@
   .Login_container form  .signup
   {
     position: relative;
-    top: -38px;
+    top: -47px;
     left: 70px;
   }
   

@@ -39,7 +39,6 @@ axios.get('http://localhost:8888/users').then((res)=>{
             <TableCell>Name</TableCell>
             <TableCell>email</TableCell>
             <TableCell>contact</TableCell>
-            <TableCell>address</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -48,7 +47,6 @@ axios.get('http://localhost:8888/users').then((res)=>{
               <TableCell>{row.name}</TableCell>
               <TableCell>{row.email}</TableCell>
               <TableCell>{row.contact}</TableCell>
-              <TableCell>{row.address}</TableCell>
             </TableRow>
           ))}
         </TableBody>

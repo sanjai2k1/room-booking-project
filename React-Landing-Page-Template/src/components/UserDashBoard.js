@@ -4,6 +4,7 @@ import {
   Route,
   Routes,
   Outlet,
+  useNavigate,
 } from "react-router-dom";
 import Header from "../components/HeaderComp";
 import Sidebar from "../components/Sidebar";
@@ -30,6 +31,7 @@ import { useLogin } from "./LoginContext";
 const drawerWidth = 240;
 
 const UserDashBoard = () => {
+  const navigate = useNavigate()
   const [availableRooms, setAvailableRooms] = useState([]);
   const [bookedRooms, setBookedRooms] = useState([]);
   const {login,showUserDashboard,setShowuserDashboard,showAdminDashboard,setShowadminDashboard} = useLogin()
@@ -121,8 +123,12 @@ if(login&&showUserDashboard)
     </>
   );
 }
+const goToLogin =()=>{
 
-  return <></>
+  navigate("/login")
+}
+
+return (<>{goToLogin()}</>)
 
 };
 

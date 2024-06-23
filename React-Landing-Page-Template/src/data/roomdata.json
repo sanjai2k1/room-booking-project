@@ -259,6 +259,29 @@
       "info": "Luxurious suite in the heart of the city.",
       "booked": false,
       "price": 400
+    },
+    {
+      "id": "1",
+      "city": "Chennai",
+      "image": "/images/room1.webp",
+      "info": "Comfortable apartment near Marina Beach.",
+      "booked": false,
+      "price": 2000
+    },
+    {
+      "id": "2",
+      "city": "Mumbai",
+      "image": "/images/room2.jpg",
+      "info": "Spacious penthouse with a view of the sea.",
+      "booked": false,
+      "price": 3000
+    },
+    {
+      "id": "82a7",
+      "city": "Mumbai",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkwn3esW5gGak_ZERXSEj_qU-6x7-0mYYvEA&s",
+      "info": "roommms",
+      "price": "1000"
     }
   ],
   "users": [
@@ -292,6 +315,22 @@
       "contact": "9176071379",
       "email": "ssankari904@gmail.com",
       "username": "sanjai",
+      "password": "Sanjai@2k1"
+    },
+    {
+      "id": "211a",
+      "name": "saddd",
+      "contact": "9457432145",
+      "email": "ssssaa@gmail.com",
+      "username": "sdffds",
+      "password": "Sanjai@2k1"
+    },
+    {
+      "id": "a635",
+      "name": "fddfsgfgsf",
+      "contact": "6578943215",
+      "email": "sadf@gmail.com",
+      "username": "cxdfsdf",
       "password": "Sanjai@2k1"
     }
   ],

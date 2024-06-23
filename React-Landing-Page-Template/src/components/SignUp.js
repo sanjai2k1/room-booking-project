@@ -78,12 +78,12 @@ const checkData=(event)=>{
           />
         </div>
         <div className="form-group">
-          <label htmlFor="contact">Contact:</label>
+          <label htmlFor="name">Contact:</label>
           <input
             type="text"
-            id="contact"
+            id="name"
             name="contact"
-            value={formData.contact}
+            value={formData.name}
             onChange={inputChangeHandler}
             required
           />

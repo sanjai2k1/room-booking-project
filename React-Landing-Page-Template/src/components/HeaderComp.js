@@ -14,7 +14,6 @@ const HeaderComp = () => {
 
   const {id} = useParams()
   const logout = ()=>{
-    sessionStorage.clear(id)
     setShowuserDashboard(false)
 
 
@@ -41,9 +40,12 @@ const HeaderComp = () => {
   
 );
     }
-    else{
-      <></>
+    const goToLogin =()=>{
+
+      navigate("/login")
     }
+    
+    return (<>{goToLogin()}</>)
 
 }
 

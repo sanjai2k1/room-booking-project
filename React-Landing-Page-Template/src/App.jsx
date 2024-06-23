@@ -14,6 +14,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import "./App.css";
 import WithLogin from "./components/WithLogin";
+import { useLogin } from "./components/LoginContext";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -22,8 +23,12 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 
 const App = () => {
   const [landingPageData, setLandingPageData] = useState({});
+  const {login,showUserDashboard,setShowuserDashboard,showAdminDashboard,setShowadminDashboard} = useLogin()
   useEffect(() => {
     setLandingPageData(JsonData);
+    setShowuserDashboard(false)
+    setShowadminDashboard(false)
+    
   }, []);
 
   return (

@@ -106,7 +106,12 @@ const EditComponent = () => {
   </Container>
   )
 }
-return <></>
+const goToLogin =()=>{
+
+  navigate("/login")
+}
+
+return (<>{goToLogin()}</>)
 }
 
 export default EditComponent

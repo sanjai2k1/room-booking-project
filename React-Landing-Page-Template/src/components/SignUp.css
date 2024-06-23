@@ -8,6 +8,9 @@
     background-size: cover;
     
   }
+  .signup-form-container h2{
+    color:cadetblue;
+  }
   
   .signup-form-container .form-group {
     margin-bottom: 15px;
@@ -16,6 +19,9 @@
   .signup-form-container label {
     display: block;
     margin-bottom: 5px;
+    color: khaki;
+    font-size: 20px;
+    font-weight: bolder;
   }
   
   .signup-form-container input[type="text"],
@@ -26,6 +32,7 @@
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
+
   }
   
   .signup-form-container button {

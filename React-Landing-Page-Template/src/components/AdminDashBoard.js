@@ -18,7 +18,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { useLogin } from './LoginContext';
 
 
@@ -103,9 +103,10 @@ const AppBar = styled(MuiAppBar, {
   
     
 const AdminDashBoard = () => {
+  const navigate = useNavigate()
     const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  const {login,showUserDashboard,setShowuserDashboard,showAdminDashboard,setShowadminDashboard} = useLogin()
+  const {login,setLogin,showUserDashboard,setShowuserDashboard,showAdminDashboard,setShowadminDashboard} = useLogin()
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -114,7 +115,8 @@ const AdminDashBoard = () => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  if(showAdminDashboard&&login)
+  console.log(showAdminDashboard)
+  if(showAdminDashboard)
     {
   return (
     <Box sx={{ display: 'flex' }}>
@@ -172,7 +174,12 @@ const AdminDashBoard = () => {
     </Box>
   )
 }
-return <></>
+const goToLogin =()=>{
+  
+  navigate("/login")
+}
+
+return (<>{goToLogin()}</>)
 }
 
 export default AdminDashBoard

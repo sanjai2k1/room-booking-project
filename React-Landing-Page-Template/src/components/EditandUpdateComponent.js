@@ -61,6 +61,7 @@ const CardComponent = ({ image, city,info,price,id,setCards}) => {
 
 
 const EditandUpdateComponent = () => {
+  const navigate = useNavigate()
   const [cards,setCards]=useState()
   const {login,showUserDashboard,setShowuserDashboard,showAdminDashboard,setShowadminDashboard} = useLogin()
 
@@ -87,7 +88,12 @@ const EditandUpdateComponent = () => {
   </Box></div>
   )
 }
-return <></>
+const goToLogin =()=>{
+
+  navigate("/login")
+}
+
+return (<>{goToLogin()}</>)
 }
 
 export default EditandUpdateComponent
