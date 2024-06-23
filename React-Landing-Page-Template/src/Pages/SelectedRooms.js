@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import DbService from '../shared/service/DataBaseService';
+import { useParams } from 'react-router-dom';
+import { useLogin } from '../components/LoginContext';
 
 const SelectedRooms = () => {
     const [bookedRooms,setBookedRooms]=useState([])
+    const {id} = useParams()
+    const {login,showUserDashboard,setShowuserDashboard} = useLogin()
 
-    
     useEffect( ()=>{
-      DbService.get("bookedRooms").then((res)=>{
-        setBookedRooms(res.data)
-      })
+      setBookedRooms(JSON.parse(sessionStorage.getItem(id)))
     },[])
     
+    if(login && showUserDashboard)
+      {
 
     return (
   <div>
@@ -34,6 +37,10 @@ const SelectedRooms = () => {
     </div>
   </div>
     )
+  }
+  else{
+    <></>
+  }
 }
 
 export default SelectedRooms;

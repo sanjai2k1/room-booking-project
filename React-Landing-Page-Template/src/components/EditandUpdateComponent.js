@@ -3,10 +3,12 @@ import { Card, CardContent, CardMedia, Typography, CardActions, Button } from '@
 import { Box } from '@mui/material';
 import DbService from '../shared/service/DataBaseService';
 import { useNavigate } from 'react-router-dom';
+import { useLogin } from './LoginContext';
 
 
 const CardComponent = ({ image, city,info,price,id,setCards}) => {
   const navigate = useNavigate()
+  
   const onDelete =(event)=>{
     DbService.delete("rooms",id).then((res)=>{
       window.alert("deleted")
@@ -60,13 +62,15 @@ const CardComponent = ({ image, city,info,price,id,setCards}) => {
 
 const EditandUpdateComponent = () => {
   const [cards,setCards]=useState()
+  const {login,showUserDashboard,setShowuserDashboard,showAdminDashboard,setShowadminDashboard} = useLogin()
+
 
     useEffect(()=>{
       DbService.get("rooms").then((res)=>{
         setCards(res.data)
       })
-    },[])
-   
+    },[cards])
+   if(showAdminDashboard){
   return (
     <div> <Box display="flex" flexWrap="wrap" gap={2}>
     {cards ? cards.map((card, index) => (
@@ -82,6 +86,8 @@ const EditandUpdateComponent = () => {
     )) : <h1>Loading..</h1>}
   </Box></div>
   )
+}
+return <></>
 }
 
 export default EditandUpdateComponent

@@ -1,6 +1,10 @@
 import React from 'react'
+import { useLogin } from '../components/LoginContext'
 
 const HomeComp = () => {
+  const {login,showUserDashboard,setShowuserDashboard} = useLogin()
+if(login && showUserDashboard)
+  {
   return (
 
     
@@ -9,6 +13,10 @@ const HomeComp = () => {
     <p>Select an option from the sidebar to begin.</p>
   </div>
   )
+}
+else{
+  <></>
+}
 }
 
 export default HomeComp

@@ -26,12 +26,13 @@ import SelectedRooms from "../Pages/SelectedRooms";
 import data from "../data/roomdata.json"; // Import your data
 import HomeComp from "../Pages/HomeComp";
 import HeaderComp from "../components/HeaderComp";
+import { useLogin } from "./LoginContext";
 const drawerWidth = 240;
 
 const UserDashBoard = () => {
   const [availableRooms, setAvailableRooms] = useState([]);
   const [bookedRooms, setBookedRooms] = useState([]);
-
+  const {login,showUserDashboard,setShowuserDashboard,showAdminDashboard,setShowadminDashboard} = useLogin()
   // Load data from localStorage on component mount
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem("myAppData"));
@@ -44,7 +45,9 @@ const UserDashBoard = () => {
       setBookedRooms([]);
     }
   }, []);
-
+  console.log(login,showUserDashboard)
+if(login&&showUserDashboard)
+  {
   return (
     <>
       {/* <Header />
@@ -117,6 +120,10 @@ const UserDashBoard = () => {
       </Box>
     </>
   );
+}
+
+  return <></>
+
 };
 
 export default UserDashBoard;

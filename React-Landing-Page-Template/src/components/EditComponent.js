@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { TextField, Button, Container, Typography, Box } from '@mui/material';
 import DbService from '../shared/service/DataBaseService';
+import { useLogin } from './LoginContext';
 
 const EditComponent = () => {
     const {id}=useParams()
@@ -13,6 +14,8 @@ const EditComponent = () => {
         info:"",
         price:0
     })
+    const {login,showUserDashboard,setShowuserDashboard,showAdminDashboard,setShowadminDashboard} = useLogin()
+
     useEffect(()=>{
         DbService.getById("rooms",id).then((res)=>{
             setRoom(res.data)
@@ -35,6 +38,8 @@ const EditComponent = () => {
         navigate("/admindashboard/editandupdate")
       
       };
+      if(showAdminDashboard)
+        {
   return (
     <Container maxWidth="sm">
     <Box
@@ -100,6 +105,8 @@ const EditComponent = () => {
     </Box>
   </Container>
   )
+}
+return <></>
 }
 
 export default EditComponent

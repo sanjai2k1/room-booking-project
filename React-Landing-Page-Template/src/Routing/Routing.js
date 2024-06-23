@@ -11,6 +11,7 @@ import SelectCity from "../Pages/SelectCity";
 import SelectedRooms from "../Pages/SelectedRooms";
 import HomeComp from "../Pages/HomeComp";
 import EditComponent from "../components/EditComponent";
+import WithLogin from "../components/WithLogin";
 
 const router = createBrowserRouter([
   {
@@ -26,8 +27,8 @@ const router = createBrowserRouter([
     element:<SignUp/>
   },
   {
-    path:"userdashboard",
-    element:<UserDashBoard/>,
+    path:"userdashboard/:id",
+    element: <><UserDashBoard/></>,
     children:[
 
       {
@@ -73,7 +74,7 @@ const router = createBrowserRouter([
 
   },{
     path:"landing",
-    element:<App/>
+    element: <App/>
   }
 
 ]);

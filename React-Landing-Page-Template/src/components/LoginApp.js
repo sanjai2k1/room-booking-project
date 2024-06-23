@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import './Login.css'
 import DbService from '../shared/service/DataBaseService';
+import { useLogin } from './LoginContext';
  const LoginApp = () => {
+  const {login,showUserDashboard,setShowuserDashboard,showAdminDashboard,setShowadminDashboard} = useLogin()
 
 const [user,setuser]=useState({
     userName:"",
@@ -20,6 +22,9 @@ DbService.get("users").then((res)=>{
 DbService.get("admins").then((res)=>{
   setAdmins(res.data)
 })
+
+setShowuserDashboard(false)
+setShowadminDashboard(false)
 
 },[])
 
@@ -55,58 +60,66 @@ const checkData=(event)=>{
                 return false;
             }    
         // window.alert(JSON.stringify(user)); 
-        
-         if(users.find((u)=>u.name===user.userName && u.password === user.userPassword)){
-          navigate("/userdashboard")
+        const isUser = users.find((u)=>u.name===user.userName && u.password === user.userPassword)
+         if(isUser){
+          setShowuserDashboard(true)
+          navigate(`/userdashboard/${isUser.id}`)
          }
          else if(admins.find((admin)=>admin.name === user.userName && admin.password === user.userPassword))
           {
+            setShowadminDashboard(true)
             navigate("/admindashboard")
           }
           else{
             window.alert("new user ? sign in")
             navigate("/signup")
           }
+          
        
 }  
+if(login)
+  {
 
-  return (<div className='Login_container'>
+    return (<div className='Login_container'>
 
-    <h1 className='Title'>Login</h1>
-    <form onSubmit={checkData}>
-      <label >
-        Username:
-        <input
-          type="text"
-          name='userName'
-          onChange={inputChangeHandler}
-          value={user.userName}
-        />
-      </label >
-      <br />
-      <label>
-        Password:
-        <input
-          type="password"
-          name='userPassword'
-          onChange={inputChangeHandler}
-          value={user.userPassword}
-        />
-      </label>
-      <br />
-      <button className='login btn btn-primary' type="submit">Login</button>
-      <button className=' signup btn btn-primary' type="submit">
-        <Link to="/signup" style={{
-                 textDecoration: 'none',
-                 color: 'inherit',
-                 '&:hover': {
-                   textDecoration: 'none'}
-                }}>
-        SignUp </Link></button>
-      {/* <Link to="productdashboard" className='btn btn-primary btn-sm'>SignUp</Link> */}
-    </form>
-</div> 
-  ) 
+      <h1 className='Title'>Login</h1>
+      <form onSubmit={checkData}>
+        <label >
+          Username:
+          <input
+            type="text"
+            name='userName'
+            onChange={inputChangeHandler}
+            value={user.userName}
+          />
+        </label >
+        <br />
+        <label>
+          Password:
+          <input
+            type="password"
+            name='userPassword'
+            onChange={inputChangeHandler}
+            value={user.userPassword}
+          />
+        </label>
+        <br />
+        <button className='login btn btn-primary' type="submit">Login</button>
+        <button className=' signup btn btn-primary' type="submit" onClick={()=>navigate("/signup")}>
+          SignUp </button>
+        {/* <Link to="productdashboard" className='btn btn-primary btn-sm'>SignUp</Link> */}
+      </form>
+  </div> 
+    ) 
+
+  }
+  return (
+    <>
+    
+    
+    </>)
+
+ 
 };
 
 export default LoginApp;

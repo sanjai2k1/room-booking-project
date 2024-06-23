@@ -16,7 +16,7 @@
   "rooms": [
     {
       "id": "1",
-      "city": "Tiruvallur",
+      "city": "Chennai",
       "image": "/images/room1.webp",
       "info": "Comfortable apartment near Marina Beach.",
       "booked": false,
@@ -39,6 +39,79 @@
       "price": 400
     },
     {
+      "id": "82a7",
+      "city": "Mumbai",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkwn3esW5gGak_ZERXSEj_qU-6x7-0mYYvEA&s",
+      "info": "roommms",
+      "price": "1000"
+    }
+  ],
+  "bookedRooms": [
+    {
+      "id": "2",
+      "city": "Mumbai",
+      "image": "/images/room2.jpg",
+      "info": "Spacious penthouse with a view of the sea.",
+      "booked": false,
+      "price": 3000
+    },
+    {
+      "id": "3",
+      "city": "Delhi",
+      "image": "/images/room3.webp",
+      "info": "Luxurious suite in the heart of the city.",
+      "booked": false,
+      "price": 400
+    },
+    {
+      "id": "1",
+      "city": "Tiruvallur",
+      "image": "/images/room1.webp",
+      "info": "Comfortable apartment near Marina Beach.",
+      "booked": false,
+      "price": 2000
+    },
+    {
+      "id": "1",
+      "city": "Tiruvallur",
+      "image": "/images/room1.webp",
+      "info": "Comfortable apartment near Marina Beach.",
+      "booked": false,
+      "price": 2000
+    },
+    {
+      "id": "2",
+      "city": "Mumbai",
+      "image": "/images/room2.jpg",
+      "info": "Spacious penthouse with a view of the sea.",
+      "booked": false,
+      "price": 3000
+    },
+    {
+      "id": "2",
+      "city": "Mumbai",
+      "image": "/images/room2.jpg",
+      "info": "Spacious penthouse with a view of the sea.",
+      "booked": false,
+      "price": 3000
+    },
+    {
+      "id": "2",
+      "city": "Mumbai",
+      "image": "/images/room2.jpg",
+      "info": "Spacious penthouse with a view of the sea.",
+      "booked": false,
+      "price": 3000
+    },
+    {
+      "id": "1",
+      "city": "Tiruvallur",
+      "image": "/images/room1.webp",
+      "info": "Comfortable apartment near Marina Beach.",
+      "booked": false,
+      "price": 2000
+    },
+    {
       "id": "68f3",
       "city": "dds",
       "image": "cxc",
@@ -46,11 +119,20 @@
       "price": 0
     },
     {
-      "id": "01f0",
-      "city": "dds",
-      "image": "cxc",
-      "info": "xvcx",
-      "price": 0
+      "id": "1",
+      "city": "Tiruvallur",
+      "image": "/images/room1.webp",
+      "info": "Comfortable apartment near Marina Beach.",
+      "booked": false,
+      "price": 2000
+    },
+    {
+      "id": "2",
+      "city": "Mumbai",
+      "image": "/images/room2.jpg",
+      "info": "Spacious penthouse with a view of the sea.",
+      "booked": false,
+      "price": 3000
     },
     {
       "id": "4872",
@@ -60,49 +142,108 @@
       "price": 0
     },
     {
-      "id": "21db",
+      "id": "1",
+      "city": "Tiruvallur",
+      "image": "/images/room1.webp",
+      "info": "Comfortable apartment near Marina Beach.",
+      "booked": false,
+      "price": 2000
+    },
+    {
+      "id": "1",
+      "city": "Tiruvallur",
+      "image": "/images/room1.webp",
+      "info": "Comfortable apartment near Marina Beach.",
+      "booked": false,
+      "price": 2000
+    },
+    {
+      "id": "2",
+      "city": "Mumbai",
+      "image": "/images/room2.jpg",
+      "info": "Spacious penthouse with a view of the sea.",
+      "booked": false,
+      "price": 3000
+    },
+    {
+      "id": "1",
+      "city": "Tiruvallur",
+      "image": "/images/room1.webp",
+      "info": "Comfortable apartment near Marina Beach.",
+      "booked": false,
+      "price": 2000
+    },
+    {
+      "id": "2",
+      "city": "Mumbai",
+      "image": "/images/room2.jpg",
+      "info": "Spacious penthouse with a view of the sea.",
+      "booked": false,
+      "price": 3000
+    },
+    {
+      "id": "1",
+      "city": "Tiruvallur",
+      "image": "/images/room1.webp",
+      "info": "Comfortable apartment near Marina Beach.",
+      "booked": false,
+      "price": 2000
+    },
+    {
+      "id": "01f0",
       "city": "dds",
       "image": "cxc",
       "info": "xvcx",
       "price": 0
     },
     {
-      "id": "abc7",
-      "city": "dds",
-      "image": "cxc",
-      "info": "xvcx",
-      "price": 0
+      "id": "1",
+      "city": "Tiruvallur",
+      "image": "/images/room1.webp",
+      "info": "Comfortable apartment near Marina Beach.",
+      "booked": false,
+      "price": 2000
     },
     {
-      "id": "fabe",
-      "city": "fg",
-      "image": "gg",
-      "info": "vv",
-      "price": 0
+      "id": "3",
+      "city": "Delhi",
+      "image": "/images/room3.webp",
+      "info": "Luxurious suite in the heart of the city.",
+      "booked": false,
+      "price": 400
     },
     {
-      "id": "692d",
-      "city": "fg",
-      "image": "gg",
-      "info": "vv",
-      "price": 0
+      "id": "2",
+      "city": "Mumbai",
+      "image": "/images/room2.jpg",
+      "info": "Spacious penthouse with a view of the sea.",
+      "booked": false,
+      "price": 3000
     },
     {
-      "id": "8279",
-      "city": "fg",
-      "image": "gg",
-      "info": "vv",
-      "price": 0
+      "id": "3",
+      "city": "Delhi",
+      "image": "/images/room3.webp",
+      "info": "Luxurious suite in the heart of the city.",
+      "booked": false,
+      "price": 400
     },
     {
-      "id": "fc19",
-      "city": "fg",
-      "image": "gg",
-      "info": "vv",
-      "price": 0
-    }
-  ],
-  "bookedRooms": [
+      "id": "2",
+      "city": "Mumbai",
+      "image": "/images/room2.jpg",
+      "info": "Spacious penthouse with a view of the sea.",
+      "booked": false,
+      "price": 3000
+    },
+    {
+      "id": "3",
+      "city": "Delhi",
+      "image": "/images/room3.webp",
+      "info": "Luxurious suite in the heart of the city.",
+      "booked": false,
+      "price": 400
+    },
     {
       "id": "2",
       "city": "Mumbai",
@@ -143,6 +284,14 @@
       "contact": "9176071379",
       "email": "sanjai@gmail.com",
       "username": "dssss",
+      "password": "Sanjai@2k1"
+    },
+    {
+      "id": "a107",
+      "name": "sanjai",
+      "contact": "9176071379",
+      "email": "ssankari904@gmail.com",
+      "username": "sanjai",
       "password": "Sanjai@2k1"
     }
   ],

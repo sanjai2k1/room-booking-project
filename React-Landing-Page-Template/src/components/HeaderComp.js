@@ -4,8 +4,27 @@ import React from 'react';
 import { AppBar, Toolbar, Typography, Box } from '@mui/material';
 
 import './HeaderComp.css'; // Import custom CSS
+import { Button } from 'react-bootstrap';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useLogin } from './LoginContext';
 
-const HeaderComp = () => (
+const HeaderComp = () => {
+  const navigate = useNavigate()
+  const {login,showUserDashboard,setShowuserDashboard} = useLogin()
+
+  const {id} = useParams()
+  const logout = ()=>{
+    sessionStorage.clear(id)
+    setShowuserDashboard(false)
+
+
+    navigate("/landing")
+
+
+  }
+  if(login && showUserDashboard)
+    {
+  return (
 
 
   
@@ -15,11 +34,18 @@ const HeaderComp = () => (
           <Typography variant="h6" noWrap component="div">
           SNKM ROOMS
           </Typography>
+          <Button onClick={logout}>Log Out</Button>
         </Box>
       </Toolbar>
     
   
 );
+    }
+    else{
+      <></>
+    }
+
+}
 
 export default HeaderComp;
 

@@ -13,6 +13,7 @@ import SmoothScroll from "smooth-scroll";
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import "./App.css";
+import WithLogin from "./components/WithLogin";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,

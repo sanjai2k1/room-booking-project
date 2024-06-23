@@ -1,25 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import RoomCard from '../components/RoomCard';
 import data from '../data/roomdata.json'; // Import your data
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import DbService from '../shared/service/DataBaseService';
+import { useLogin } from '../components/LoginContext';
 
 const SelectCity = () => {
   const [selectedCity, setSelectedCity] = useState('');
   const [availableRooms, setAvailableRooms] = useState(data.rooms);
-  const [items, setItems] = useState([]);
+  const [bookedRooms, setBookedRooms] = useState([]);
+  const {login,showUserDashboard,setShowuserDashboard} = useLogin()
+
+  const {id} = useParams()
     useEffect(()=>{
-        sessionStorage.clear()
     },[])
   const addItem = (room) => {
-
+    bookedRooms.push(room)
+    sessionStorage.setItem(id,JSON.stringify(bookedRooms))
     
-    console.log(room)
+   
     // setInputValue('');
   };
   // Function to handle booking a room
   const handleBookRoomClick = (room) => {
-    
+    addItem(room)
     
     DbService.post("bookedRooms",room).then((res)=>{})
     // Pass booked room to parent component
@@ -33,7 +37,8 @@ const SelectCity = () => {
     const rooms = data.rooms.filter(room => room.city === city && !room.booked);
     setAvailableRooms(rooms);
   };
-
+if(login && showUserDashboard)
+  {
   return (
     <div>
       <h2>Select Rooms</h2>
@@ -55,6 +60,10 @@ const SelectCity = () => {
       </div>
     </div>
   );
+}
+else{
+  <></>
+}
 };
 
 export default SelectCity;
