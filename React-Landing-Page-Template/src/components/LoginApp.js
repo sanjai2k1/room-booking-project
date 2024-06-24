@@ -10,6 +10,7 @@ const LoginApp = () => {
     setShowuserDashboard,
     showAdminDashboard,
     setShowadminDashboard,
+    adminLogin, setAdminlogin
   } = useLogin();
 
   const [user, setuser] = useState({
@@ -22,7 +23,7 @@ const LoginApp = () => {
 
   useEffect(() => {
     DbService.get("users").then((res) => {
-    
+
       setusers(res.data);
     });
     DbService.get("admins").then((res) => {
@@ -65,7 +66,6 @@ const LoginApp = () => {
       return false;
     }
     // window.alert(JSON.stringify(user));
-    console.log("hai");
     const isUser = users.find(
       (u) => u.username === user.userName && u.password === user.userPassword
     );
@@ -78,8 +78,11 @@ const LoginApp = () => {
           admin.name === user.userName && admin.password === user.userPassword
       )
     ) {
+      setAdminlogin(true)
       setShowadminDashboard(true);
+      if(adminLogin){
       navigate("/admindashboard");
+      }
     } else {
       window.alert("new user ? sign in");
     }

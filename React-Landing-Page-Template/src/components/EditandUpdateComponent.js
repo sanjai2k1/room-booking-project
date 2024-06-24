@@ -63,7 +63,7 @@ const CardComponent = ({ image, city,info,price,id,setCards}) => {
 const EditandUpdateComponent = () => {
   const navigate = useNavigate()
   const [cards,setCards]=useState()
-  const {login,showUserDashboard,setShowuserDashboard,showAdminDashboard,setShowadminDashboard} = useLogin()
+  const {login,showUserDashboard,setShowuserDashboard,showAdminDashboard,setShowadminDashboard,adminLogin, setAdminlogin} = useLogin()
 
 
     useEffect(()=>{
@@ -71,6 +71,7 @@ const EditandUpdateComponent = () => {
         setCards(res.data)
       })
     },[cards])
+    // console.log(adminLogin,showAdminDashboard)
    if(showAdminDashboard){
   return (
     <div> <Box display="flex" flexWrap="wrap" gap={2}>

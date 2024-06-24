@@ -15,6 +15,7 @@ const HeaderComp = () => {
   const {id} = useParams()
   const logout = ()=>{
     setShowuserDashboard(false)
+    
 
 
     navigate("/landing")

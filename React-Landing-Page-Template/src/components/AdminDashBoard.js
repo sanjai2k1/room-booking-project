@@ -20,6 +20,7 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useLogin } from "./LoginContext";
+import { Button } from "react-bootstrap";
 
 const StyledLink = styled(Link)(({ theme }) => ({
   textDecoration: "none",
@@ -97,6 +98,15 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 const AdminDashBoard = () => {
+  const logout = ()=>{
+    setShowadminDashboard(false)
+    
+
+
+    navigate("/landing")
+
+
+  }
   const navigate = useNavigate();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -106,9 +116,17 @@ const AdminDashBoard = () => {
     showUserDashboard,
     setShowuserDashboard,
     showAdminDashboard,
-    setShowadminDashboard,
+    setShowadminDashboard,adminLogin, setAdminlogin
   } = useLogin();
-
+  const [isLog,setIsLog] = React.useState(showAdminDashboard)
+  React.useEffect(()=>{
+    // console.log(adminLogin)
+    // if(!adminLogin){
+    //   setShowadminDashboard(true)
+    //   console.log("iiiii")
+    // }
+    
+  },[])
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -141,6 +159,7 @@ const AdminDashBoard = () => {
               <Typography variant="h6" noWrap component="div">
                 SNKM ROOMS
               </Typography>
+              <Button onClick={logout}>Log Out</Button>
             </Box>
           </Toolbar>
         </AppBar>
