@@ -7,19 +7,29 @@ const SelectedRooms = () => {
     const [bookedRooms,setBookedRooms]=useState([])
     const {id} = useParams()
     const {login,showUserDashboard,setShowuserDashboard} = useLogin()
+    const [user,setUser]=useState()
 
     useEffect( ()=>{
       DbService.getById("users",id).then((res)=>{
         setBookedRooms(res.data.bookedrooms)
+        setUser(res.data)
       })
-      console.log(bookedRooms)
+     
     },[])
-    const cancel = (index)=>{
-      const filtered = bookedRooms.filter((br,ind)=>ind!==index)
+
+    const cancel =(ide)=>{
       
-      DbService.update("users",id,)
+      const filtered = bookedRooms.filter((br)=>br.id!==ide)
+      setBookedRooms(filtered)
 
-
+      const modifiy = {
+        ...user,
+        bookedrooms:[...filtered]
+      }
+      DbService.update("users",id,modifiy).then((res)=>{
+        console.log(res)
+      })
+      window.alert('Room Cancelled ');
 
     }
     
@@ -38,7 +48,7 @@ const SelectedRooms = () => {
               <div className="card-body">
                 <h5 className="card-title">{room.city}</h5>
                 <p className="card-text">{room.info}</p>
-                <button onClick={()=>cancel(ind)}>Cancel Room</button>
+                <button onClick={()=>cancel(room.id)}>Cancel Room</button>
               </div>
             </div>
           </div>

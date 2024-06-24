@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import RoomCard from '../components/RoomCard';
-import data from '../data/roomdata.json'; // Import your data
+// import data from '../data/roomdata.json'; // Import your data
 import { useLocation, useParams } from 'react-router-dom';
 import DbService from '../shared/service/DataBaseService';
 import { useLogin } from '../components/LoginContext';
-
+import data from "../data/staticdata.json"
 const SelectCity = () => {
   const [selectedCity, setSelectedCity] = useState('');
   const [availableRooms, setAvailableRooms] = useState(data.rooms);
@@ -16,7 +16,9 @@ const SelectCity = () => {
     DbService.getById("users",id).then((res)=>{
       
       setUser(res.data)
+      
     })
+
 
   },[])
   // const addItem = (room) => {
@@ -29,15 +31,30 @@ const SelectCity = () => {
   // Function to handle booking a room
   const handleBookRoomClick = (room) => {
     // addItem(room)
-    setBookedRooms(prev=>[...prev,room])
-    setUser((prev)=>({...prev,bookedrooms:bookedRooms}))
-    console.log(user)
-    DbService.update("users",id,user).then((res)=>{
-      console.log(res)
-    })
+    const alreadyExists = user.bookedrooms.find((rooms)=>rooms.id===room.id)
+    if(!alreadyExists)
+      {
+        const modifiy = {
+          ...user,
+          bookedrooms:[...user.bookedrooms,room]
+        }
+       
+        // setUser({...user,bookedrooms:[...bookedRooms]})
+        // console.log(user)
+        DbService.update("users",id,modifiy).then((res)=>{
+          console.log(res)
+          setUser(res.data)
+          
+        })
+        window.alert('Room Booked Successfully');
+      }
+      else{
+        window.alert('Already Booked ');
+      }
+   
     // DbService.post("bookedRooms",room).then((res)=>{})
     // Pass booked room to parent component
-    window.alert('Room Booked Successfully');
+    
   };
 
   // Function to handle city selection
