@@ -356,6 +356,20 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkwn3esW5gGak_ZERXSEj_qU-6x7-0mYYvEA&s",
       "info": "roommms",
       "price": "1000"
+    },
+    {
+      "id": "1ce7",
+      "city": "Chennai",
+      "image": "https://setupmyhotel.com/wp-content/uploads/2024/01/image.webp?ezimgfmt=rs:300x250/rscb339/ng:webp/ngcb338",
+      "info": " Room assigned to one person. May have one or more  beds.\nThe room size or area of Single Rooms is generally between 37 m² to 45 m²",
+      "price": "3000"
+    },
+    {
+      "id": "7fb2",
+      "city": "Mumbai",
+      "image": "https://setupmyhotel.com/wp-content/uploads/2024/01/image-1.webp?ezimgfmt=rs:300x250/rscb339/ng:webp/ngcb338",
+      "info": " A room assigned to two people. May have one or more  beds.\nThe room size or area of Double Rooms are generally between 40 m² to 45 m².",
+      "price": "3909"
     }
   ],
   "users": [
@@ -365,7 +379,8 @@
       "contact": "user1",
       "username": "user1",
       "email": "user1",
-      "password": "User@2k1"
+      "password": "User@2k1",
+      "bookedrooms": []
     },
     {
       "id": "2",
@@ -373,7 +388,8 @@
       "contact": "user2",
       "username": "user2",
       "email": "user2",
-      "password": "User@2k1"
+      "password": "User@2k1",
+      "bookedrooms": []
     },
     {
       "id": "0eb9",
@@ -381,15 +397,46 @@
       "contact": "9176071379",
       "email": "sanjai@gmail.com",
       "username": "dssss",
-      "password": "Sanjai@2k1"
+      "password": "Sanjai@2k1",
+      "bookedrooms": [
+        {
+          "id": "1ce7",
+          "city": "Chennai",
+          "image": "https://setupmyhotel.com/wp-content/uploads/2024/01/image.webp?ezimgfmt=rs:300x250/rscb339/ng:webp/ngcb338",
+          "info": " Room assigned to one person. May have one or more  beds.\nThe room size or area of Single Rooms is generally between 37 m² to 45 m²",
+          "price": "3000"
+        },
+        {
+          "id": "7fb2",
+          "city": "Mumbai",
+          "image": "https://setupmyhotel.com/wp-content/uploads/2024/01/image-1.webp?ezimgfmt=rs:300x250/rscb339/ng:webp/ngcb338",
+          "info": " A room assigned to two people. May have one or more  beds.\nThe room size or area of Double Rooms are generally between 40 m² to 45 m².",
+          "price": "3909"
+        },
+        {
+          "id": "1ce7",
+          "city": "Chennai",
+          "image": "https://setupmyhotel.com/wp-content/uploads/2024/01/image.webp?ezimgfmt=rs:300x250/rscb339/ng:webp/ngcb338",
+          "info": " Room assigned to one person. May have one or more  beds.\nThe room size or area of Single Rooms is generally between 37 m² to 45 m²",
+          "price": "3000"
+        },
+        {
+          "id": "7fb2",
+          "city": "Mumbai",
+          "image": "https://setupmyhotel.com/wp-content/uploads/2024/01/image-1.webp?ezimgfmt=rs:300x250/rscb339/ng:webp/ngcb338",
+          "info": " A room assigned to two people. May have one or more  beds.\nThe room size or area of Double Rooms are generally between 40 m² to 45 m².",
+          "price": "3909"
+        }
+      ]
     },
     {
       "id": "a107",
-      "name": "sanjai",
+      "name": "dsd",
       "contact": "9176071379",
-      "email": "ssankari904@gmail.com",
-      "username": "sanjai",
-      "password": "Sanjai@2k1"
+      "email": "sanjai@gmail.com",
+      "username": "dssss",
+      "password": "Sanjai@2k1",
+      "bookedrooms": []
     },
     {
       "id": "211a",
@@ -397,7 +444,8 @@
       "contact": "9457432145",
       "email": "ssssaa@gmail.com",
       "username": "sdffds",
-      "password": "Sanjai@2k1"
+      "password": "Sanjai@2k1",
+      "bookedrooms": []
     },
     {
       "id": "a635",
@@ -405,7 +453,8 @@
       "contact": "6578943215",
       "email": "sadf@gmail.com",
       "username": "cxdfsdf",
-      "password": "Sanjai@2k1"
+      "password": "Sanjai@2k1",
+      "bookedrooms": []
     }
   ],
   "admins": [

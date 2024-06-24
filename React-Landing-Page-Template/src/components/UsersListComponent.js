@@ -8,13 +8,27 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Title from './Title';
+import { useNavigate } from 'react-router-dom';
+import { useLogin } from './LoginContext';
 
 
 
   
 const UsersListComponent = () => {
 const [users,setUsers]= useState([])
+const {
+  login,
+  setLogin,
+  showUserDashboard,
+  setShowuserDashboard,
+  showAdminDashboard,
+  setShowadminDashboard,adminLogin, setAdminlogin
+} = useLogin();
+const navigate = useNavigate()
 useEffect(()=>{
+  if(!showAdminDashboard){
+    navigate("/login")
+  }
 axios.get('http://localhost:8888/users').then((res)=>{
     console.log(res.data)
     setUsers(res.data)

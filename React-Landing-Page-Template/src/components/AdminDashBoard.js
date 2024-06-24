@@ -118,14 +118,15 @@ const AdminDashBoard = () => {
     showAdminDashboard,
     setShowadminDashboard,adminLogin, setAdminlogin
   } = useLogin();
-  const [isLog,setIsLog] = React.useState(showAdminDashboard)
   React.useEffect(()=>{
     // console.log(adminLogin)
     // if(!adminLogin){
     //   setShowadminDashboard(true)
     //   console.log("iiiii")
     // }
-    
+    if(!showAdminDashboard){
+      navigate("/login")
+    }
   },[])
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -135,7 +136,6 @@ const AdminDashBoard = () => {
     setOpen(false);
   };
   console.log(showAdminDashboard);
-  if (showAdminDashboard) {
     return (
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
@@ -201,12 +201,7 @@ const AdminDashBoard = () => {
         </Main>
       </Box>
     );
-  }
-  const goToLogin = () => {
-    navigate("/login");
-  };
-
-  return <>{goToLogin()}</>;
+  
 };
 
 export default AdminDashBoard;

@@ -10,22 +10,32 @@ const SelectCity = () => {
   const [availableRooms, setAvailableRooms] = useState(data.rooms);
   const [bookedRooms, setBookedRooms] = useState([]);
   const {login,showUserDashboard,setShowuserDashboard} = useLogin()
-
+  const [user,setUser]=useState()
   const {id} = useParams()
-    useEffect(()=>{
-    },[])
-  const addItem = (room) => {
-    bookedRooms.push(room)
-    sessionStorage.setItem(id,JSON.stringify(bookedRooms))
+  useEffect(()=>{
+    DbService.getById("users",id).then((res)=>{
+      
+      setUser(res.data)
+    })
+
+  },[])
+  // const addItem = (room) => {
+  //   bookedRooms.push(room)
+  //   sessionStorage.setItem(id,JSON.stringify(bookedRooms))
     
    
-    // setInputValue('');
-  };
+  //   // setInputValue('');
+  // };
   // Function to handle booking a room
   const handleBookRoomClick = (room) => {
-    addItem(room)
-    
-    DbService.post("bookedRooms",room).then((res)=>{})
+    // addItem(room)
+    setBookedRooms(prev=>[...prev,room])
+    setUser((prev)=>({...prev,bookedrooms:bookedRooms}))
+    console.log(user)
+    DbService.update("users",id,user).then((res)=>{
+      console.log(res)
+    })
+    // DbService.post("bookedRooms",room).then((res)=>{})
     // Pass booked room to parent component
     window.alert('Room Booked Successfully');
   };

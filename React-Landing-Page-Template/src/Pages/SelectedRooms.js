@@ -9,8 +9,19 @@ const SelectedRooms = () => {
     const {login,showUserDashboard,setShowuserDashboard} = useLogin()
 
     useEffect( ()=>{
-      setBookedRooms(JSON.parse(sessionStorage.getItem(id)))
+      DbService.getById("users",id).then((res)=>{
+        setBookedRooms(res.data.bookedrooms)
+      })
+      console.log(bookedRooms)
     },[])
+    const cancel = (index)=>{
+      const filtered = bookedRooms.filter((br,ind)=>ind!==index)
+      
+      DbService.update("users",id,)
+
+
+
+    }
     
     if(login && showUserDashboard)
       {
@@ -20,13 +31,14 @@ const SelectedRooms = () => {
     <h2>Selected Rooms</h2>
     <div className="row">
       {bookedRooms ? (
-        bookedRooms.map(room => (
+        bookedRooms.map((room,ind) => (
           <div key={room.id} className="col-md-4">
             <div className="card" style={{ width: '18rem' }}>
               <img src={room.image} className="card-img-top" alt="Room" />
               <div className="card-body">
                 <h5 className="card-title">{room.city}</h5>
                 <p className="card-text">{room.info}</p>
+                <button onClick={()=>cancel(ind)}>Cancel Room</button>
               </div>
             </div>
           </div>

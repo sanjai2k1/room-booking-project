@@ -7,12 +7,14 @@ import './HeaderComp.css'; // Import custom CSS
 import { Button } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useLogin } from './LoginContext';
+import { useEffect } from 'react';
 
 const HeaderComp = () => {
   const navigate = useNavigate()
   const {login,showUserDashboard,setShowuserDashboard} = useLogin()
 
   const {id} = useParams()
+
   const logout = ()=>{
     setShowuserDashboard(false)
     
@@ -22,8 +24,7 @@ const HeaderComp = () => {
 
 
   }
-  if(login && showUserDashboard)
-    {
+  
   return (
 
 
@@ -40,13 +41,8 @@ const HeaderComp = () => {
     
   
 );
-    }
-    const goToLogin =()=>{
-
-      navigate("/login")
-    }
     
-    return (<>{goToLogin()}</>)
+    
 
 }
 

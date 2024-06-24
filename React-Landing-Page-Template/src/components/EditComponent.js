@@ -17,10 +17,14 @@ const EditComponent = () => {
     const {login,showUserDashboard,setShowuserDashboard,showAdminDashboard,setShowadminDashboard} = useLogin()
 
     useEffect(()=>{
+      if(!showAdminDashboard){
+        navigate("/login")
+      }
         DbService.getById("rooms",id).then((res)=>{
             setRoom(res.data)
             console.log(res.data)
         })
+        
     },[])
     const handleChange = (event) => {
         const {name,value} = event.target
@@ -38,8 +42,7 @@ const EditComponent = () => {
         navigate("/admindashboard/editandupdate")
       
       };
-      if(showAdminDashboard)
-        {
+     
   return (
     <Container maxWidth="sm">
     <Box
@@ -106,12 +109,7 @@ const EditComponent = () => {
   </Container>
   )
 }
-const goToLogin =()=>{
 
-  navigate("/login")
-}
 
-return (<>{goToLogin()}</>)
-}
 
 export default EditComponent

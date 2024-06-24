@@ -67,12 +67,16 @@ const EditandUpdateComponent = () => {
 
 
     useEffect(()=>{
+      if(!showAdminDashboard){
+        navigate("/login")
+      }else{
       DbService.get("rooms").then((res)=>{
         setCards(res.data)
       })
+    }
     },[cards])
     // console.log(adminLogin,showAdminDashboard)
-   if(showAdminDashboard){
+  
   return (
     <div> <Box display="flex" flexWrap="wrap" gap={2}>
     {cards ? cards.map((card, index) => (
@@ -88,13 +92,6 @@ const EditandUpdateComponent = () => {
     )) : <h1>Loading..</h1>}
   </Box></div>
   )
-}
-const goToLogin =()=>{
-
-  navigate("/login")
-}
-
-return (<>{goToLogin()}</>)
 }
 
 export default EditandUpdateComponent
