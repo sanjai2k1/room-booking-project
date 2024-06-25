@@ -63,10 +63,14 @@ const CardComponent = ({ image, city,info,price,id,setCards}) => {
 const EditandUpdateComponent = () => {
   const navigate = useNavigate()
   const [cards,setCards]=useState()
-  const {login,showUserDashboard,setShowuserDashboard,showAdminDashboard,setShowadminDashboard,adminLogin, setAdminlogin} = useLogin()
-
+  const {login,showUserDashboard,setLogin,setShowuserDashboard,showAdminDashboard,setShowadminDashboard,adminLogin, setAdminlogin} = useLogin()
 
     useEffect(()=>{
+      if(sessionStorage.getItem("admin")){
+        setLogin(true)
+        setShowuserDashboard(false)
+        setShowadminDashboard(true)
+      }
       if(!showAdminDashboard){
         navigate("/login")
       }else{

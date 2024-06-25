@@ -26,6 +26,11 @@ const {
 } = useLogin();
 const navigate = useNavigate()
 useEffect(()=>{
+  if(sessionStorage.getItem("admin")){
+    setLogin(true)
+    setShowuserDashboard(false)
+    setShowadminDashboard(true)
+  }
   if(!showAdminDashboard){
     navigate("/login")
   }

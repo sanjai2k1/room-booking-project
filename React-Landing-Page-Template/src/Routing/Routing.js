@@ -28,8 +28,13 @@ const router = createBrowserRouter([
   },
   {
     path:"userdashboard/:id",
-    element: <><UserDashBoard/></>,
+    element: <UserDashBoard/>,
     children:[
+      {
+        path:"",
+        element:<Navigate to={"home"}/>
+
+      },
 
       {
          path:"select-rooms",
@@ -39,7 +44,7 @@ const router = createBrowserRouter([
         path:"selected-rooms",
         element:<SelectedRooms/>
      },{
-      path:"",
+      path:"home",
       element:<HomeComp/>
      }
     ]

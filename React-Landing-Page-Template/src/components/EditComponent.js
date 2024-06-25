@@ -14,9 +14,14 @@ const EditComponent = () => {
         info:"",
         price:0
     })
-    const {login,showUserDashboard,setShowuserDashboard,showAdminDashboard,setShowadminDashboard} = useLogin()
+    const {login,showUserDashboard,setLogin,setShowuserDashboard,showAdminDashboard,setShowadminDashboard} = useLogin()
 
     useEffect(()=>{
+      if(sessionStorage.getItem("admin")){
+        setLogin(true)
+        setShowuserDashboard(false)
+        setShowadminDashboard(true)
+      }
       if(!showAdminDashboard){
         navigate("/login")
       }

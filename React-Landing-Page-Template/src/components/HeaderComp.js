@@ -11,12 +11,18 @@ import { useEffect } from 'react';
 
 const HeaderComp = () => {
   const navigate = useNavigate()
-  const {login,showUserDashboard,setShowuserDashboard} = useLogin()
+  const {login,setLogin,showUserDashboard,setShowuserDashboard} = useLogin()
 
   const {id} = useParams()
-
+  useEffect(()=>{
+    if(sessionStorage.getItem("user")){
+      setLogin(true)
+      setShowuserDashboard(true)      
+    }
+  })
   const logout = ()=>{
     setShowuserDashboard(false)
+    sessionStorage.clear("user")
     
 
 

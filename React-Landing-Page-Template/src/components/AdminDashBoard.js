@@ -99,6 +99,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 const AdminDashBoard = () => {
   const logout = ()=>{
+    sessionStorage.clear()
     setShowadminDashboard(false)
     
 
@@ -119,11 +120,11 @@ const AdminDashBoard = () => {
     setShowadminDashboard,adminLogin, setAdminlogin
   } = useLogin();
   React.useEffect(()=>{
-    // console.log(adminLogin)
-    // if(!adminLogin){
-    //   setShowadminDashboard(true)
-    //   console.log("iiiii")
-    // }
+    if(sessionStorage.getItem("admin")){
+      setLogin(true)
+      setShowuserDashboard(false)
+      setShowadminDashboard(true)
+    }
     if(!showAdminDashboard){
       navigate("/login")
     }
@@ -135,7 +136,6 @@ const AdminDashBoard = () => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  console.log(showAdminDashboard);
     return (
       <Box sx={{ display: "flex" }}>
         <CssBaseline />

@@ -32,22 +32,17 @@ const drawerWidth = 240;
 
 const UserDashBoard = () => {
   const navigate = useNavigate()
-  const [availableRooms, setAvailableRooms] = useState([]);
-  const [bookedRooms, setBookedRooms] = useState([]);
-  const {login,showUserDashboard,setShowuserDashboard,showAdminDashboard,setShowadminDashboard} = useLogin()
+  const {login,setLogin,showUserDashboard,setShowuserDashboard,showAdminDashboard,setShowadminDashboard} = useLogin()
   // Load data from localStorage on component mount
-  useEffect(() => {
-    const storedData = JSON.parse(localStorage.getItem("myAppData"));
-    if (storedData) {
-      setAvailableRooms(storedData.rooms);
-      setBookedRooms(storedData.bookedRooms);
-    } else {
-      // If no data in localStorage, initialize with default data
-      setAvailableRooms(data.rooms);
-      setBookedRooms([]);
+  useEffect(()=>{
+    if(sessionStorage.getItem("user")){
+      setLogin(true)
+      setShowuserDashboard(true)
+      
     }
-  }, []);
-  console.log(login,showUserDashboard)
+console.log(login,showUserDashboard)
+  },[])
+  
 if(login&&showUserDashboard)
   {
   return (

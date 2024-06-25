@@ -7,17 +7,33 @@ import { useLogin } from '../components/LoginContext';
 import data from "../data/staticdata.json"
 const SelectCity = () => {
   const [selectedCity, setSelectedCity] = useState('');
+  const [roomData,setRoomData] = useState([])
   const [availableRooms, setAvailableRooms] = useState(data.rooms);
   const [bookedRooms, setBookedRooms] = useState([]);
-  const {login,showUserDashboard,setShowuserDashboard} = useLogin()
-  const [user,setUser]=useState()
+  const {login,setLogin,showUserDashboard,setShowuserDashboard,showAdminDashboard,setShowadminDashboard} = useLogin()
+  // Load data from localStorage on component mount
+  
+      const [user,setUser]=useState()
   const {id} = useParams()
   useEffect(()=>{
+    
+    if(sessionStorage.getItem("user")){
+      setLogin(true)
+      setShowuserDashboard(true)
+      
+    
     DbService.getById("users",id).then((res)=>{
       
       setUser(res.data)
+      console.log(user)
       
     })
+    DbService.get("rooms").then((res)=>{
+      setRoomData((prev)=>[...res.data])
+      console.log(roomData)
+      
+    })
+  }
 
 
   },[])
@@ -42,7 +58,6 @@ const SelectCity = () => {
         // setUser({...user,bookedrooms:[...bookedRooms]})
         // console.log(user)
         DbService.update("users",id,modifiy).then((res)=>{
-          console.log(res)
           setUser(res.data)
           
         })

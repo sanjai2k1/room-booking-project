@@ -10,7 +10,8 @@ const LoginApp = () => {
     setShowuserDashboard,
     showAdminDashboard,
     setShowadminDashboard,
-    adminLogin, setAdminlogin
+    adminLogin, setAdminlogin,
+    setLogin
   } = useLogin();
 
   const [user, setuser] = useState({
@@ -22,6 +23,17 @@ const LoginApp = () => {
   const [admins, setAdmins] = useState();
 
   useEffect(() => {
+    if(sessionStorage.getItem("user")){
+      setLogin(true)
+      setShowuserDashboard(true)
+      navigate(`/userdashboard/${sessionStorage.getItem("user")}`)
+      
+    }else if(sessionStorage.getItem("admin")){
+      setLogin(true)
+      setShowadminDashboard(true)
+      navigate(`/admindashboard/`)
+    }
+    else{
     DbService.get("users").then((res) => {
 
       setusers(res.data);
@@ -32,6 +44,7 @@ const LoginApp = () => {
 
     setShowuserDashboard(false);
     setShowadminDashboard(false);
+  }
   }, []);
 
   const navigate = useNavigate();
@@ -71,6 +84,8 @@ const LoginApp = () => {
     );
     if (isUser) {
       setShowuserDashboard(true);
+      
+      sessionStorage.setItem("user",isUser.id)
       navigate(`/userdashboard/${isUser.id}`);
     } else if (
       admins.find(
@@ -81,6 +96,7 @@ const LoginApp = () => {
       setAdminlogin(true)
       setShowadminDashboard(true);
       if(adminLogin){
+        sessionStorage.setItem("admin","true")
       navigate("/admindashboard");
       }
     } else {

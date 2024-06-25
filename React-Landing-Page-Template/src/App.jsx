@@ -28,6 +28,7 @@ const App = () => {
     setLandingPageData(JsonData);
     setShowuserDashboard(false)
     setShowadminDashboard(false)
+    sessionStorage.clear()
     
   }, []);
 
