@@ -187,12 +187,51 @@ const AdminDashBoard = () => {
           </DrawerHeader>
 
           <List>
+              <Link
+                to="userslist"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
+                <ListItem>
+                  <Button variant="contained" color="primary" fullWidth>
+                    Users List
+                  </Button>
+                </ListItem>
+              </Link>
+
+              <Link to="roomadd"  
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}>
+                <ListItem>
+                  <Button variant="contained" color="secondary" fullWidth>
+                    Add Rooms
+                  </Button>
+                </ListItem>
+              </Link>
+              <Link to="editandupdate"  
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                }}>
+                <ListItem>
+                  <Button variant="contained" color="secondary" fullWidth>
+                    Edit and Update
+                  </Button>
+                </ListItem>
+              </Link>
+            </List>
+
+          {/* <List>
             {["userslist", "roomadd", "editandupdate"].map((text, index) => (
               <ListItem key={text} disablePadding>
                 <StyledNavLink to={`${text}`} text={`${text}`} />
               </ListItem>
             ))}
-          </List>
+          </List> */}
         </Drawer>
         <Main open={open}>
           <DrawerHeader />

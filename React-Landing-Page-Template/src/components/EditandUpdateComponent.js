@@ -27,7 +27,8 @@ const CardComponent = ({ image, city,info,price,id,setCards}) => {
 
 
     
-    return (
+    return ( 
+      
       <Card sx={{ maxWidth: 345 }}>
         <CardMedia
           component="img"
