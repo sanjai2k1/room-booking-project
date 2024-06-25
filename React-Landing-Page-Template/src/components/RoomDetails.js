@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card, CardContent, CardMedia, Typography, CardActions, Button } from '@mui/material';
 
 const SelectedRooms = ({ bookedRooms }) => (
   <div>
@@ -6,15 +7,32 @@ const SelectedRooms = ({ bookedRooms }) => (
     <div className="row">
       {bookedRooms.length > 0 ? (
         bookedRooms.map(room => (
-          <div key={room.id} className="col-md-4">
-            <div className="card" style={{ width: '18rem' }}>
-              <img src={room.image} className="card-img-top" alt="Room" />
-              <div className="card-body">
-                <h5 className="card-title">{room.city}</h5>
-                <p className="card-text">{room.info}</p>
-              </div>
-            </div>
-          </div>
+          <>
+          <Card sx={{ maxWidth: 345 }}>
+        <CardMedia
+          component="img"
+          height="140"
+          image={room.image}
+          alt={"img"}
+        />
+        <CardContent>
+         
+          <Typography variant="body1" color="text.secondary">
+            {room.info}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {room.city}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {room.price}
+          </Typography>
+        </CardContent>
+        <CardActions>
+         
+        </CardActions>
+      </Card>
+         
+          </>
         ))
       ) : (
         <p>No rooms booked yet.</p>

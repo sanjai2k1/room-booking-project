@@ -1,22 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import RoomCard from '../components/RoomCard';
 // import data from '../data/roomdata.json'; // Import your data
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import DbService from '../shared/service/DataBaseService';
 import { useLogin } from '../components/LoginContext';
-import data from "../data/staticdata.json"
+import { Card, CardContent, CardMedia, Typography, CardActions, Button,Box } from '@mui/material';
+
 const SelectCity = () => {
   const [selectedCity, setSelectedCity] = useState('');
   const [roomData,setRoomData] = useState([])
-  const [availableRooms, setAvailableRooms] = useState(data.rooms);
+  const [availableRooms, setAvailableRooms] = useState([]);
   const [bookedRooms, setBookedRooms] = useState([]);
   const {login,setLogin,showUserDashboard,setShowuserDashboard,showAdminDashboard,setShowadminDashboard} = useLogin()
   // Load data from localStorage on component mount
-  
+  const [cities,setCities] = useState([])
+  const navigate = useNavigate()
       const [user,setUser]=useState()
   const {id} = useParams()
+
+
   useEffect(()=>{
-    
+    console.log(bookedRooms)
     if(sessionStorage.getItem("user")){
       setLogin(true)
       setShowuserDashboard(true)
@@ -25,18 +29,31 @@ const SelectCity = () => {
     DbService.getById("users",id).then((res)=>{
       
       setUser(res.data)
-      console.log(user)
+   
       
     })
     DbService.get("rooms").then((res)=>{
       setRoomData((prev)=>[...res.data])
-      console.log(roomData)
+      setAvailableRooms((prev)=>[...res.data])
+
+      
       
     })
+    DbService.get("cities").then((res)=>{
+      setCities((prev)=>[...res.data])
+
+      
+      
+    })
+  }
+  else{
+    navigate("/login")
   }
 
 
   },[])
+
+ 
   // const addItem = (room) => {
   //   bookedRooms.push(room)
   //   sessionStorage.setItem(id,JSON.stringify(bookedRooms))
@@ -75,9 +92,16 @@ const SelectCity = () => {
   // Function to handle city selection
   const handleCitySelect = (e) => {
     const city = e.target.value;
+    if(city!=="")
+      {
     setSelectedCity(city);
-    const rooms = data.rooms.filter(room => room.city === city && !room.booked);
+    const rooms = roomData.filter(room => room.city === city && !room.booked);
     setAvailableRooms(rooms);
+      }
+      else{
+        setSelectedCity(city);
+        setAvailableRooms(roomData)
+      }
   };
 if(login && showUserDashboard)
   {
@@ -88,24 +112,49 @@ if(login && showUserDashboard)
         <label htmlFor="citySelect">Select City:</label>
         <select id="citySelect" className="form-control" onChange={handleCitySelect} value={selectedCity}>
           <option value="">Select a city...</option>
-          {data.cities.map(city => (
+          {cities.length>0 ?cities.map(city => (
             <option key={city.id} value={city.city}>{city.city}</option>
-          ))}
+          )) :<>loading...</>}
         </select>
       </div>
-      <div className="row mt-4">
-        {availableRooms.map(room => (
-          <div key={room.id} className="col-md-4">
-            <RoomCard room={room} onBook={() => handleBookRoomClick(room)} />
-          </div>
-        ))}
-      </div>
+      <Box display="flex" flexWrap="wrap" gap={2}>
+        {roomData.length>0 ? availableRooms.map(room => (
+          
+          <Card key={room.id} sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={room.image}
+            alt={"img"}
+          />
+          <CardContent>
+           
+            <Typography variant="body1" color="text.secondary">
+              {room.info}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {room.city}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {room.price}
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button size="small" color="primary" onClick={()=>handleBookRoomClick(room)} >
+              Book Room
+            </Button>
+   
+          </CardActions>
+        </Card>
+          
+        )):<h1>Loading..</h1>}
+        </Box>
+     
     </div>
   );
-}
-else{
-  <></>
-}
+  }
+  return <></>
+
 };
 
 export default SelectCity;

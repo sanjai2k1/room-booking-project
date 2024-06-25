@@ -125,6 +125,13 @@
       "info": " This type of room is always adjoining to the  swimming pool pool or has a private  pool attached to the room.\n\nThe room size or area of Cabana Room Types is generally between 30 m² to 45 m².",
       "booked": false,
       "price": "3848"
+    },
+    {
+      "id": "dd84",
+      "city": "Chennai",
+      "image": "https://www.nawy.com/blog/wp-content/uploads/2022/07/small-room-design.jpg",
+      "info": "A small room design depends on what’s the room’s purpose, as you will never have the same layout for both living room and bedrooms. However there are some general tips that can be implemented in numerous rooms such as\nAdd lots of shelves to store your belongings and some decorative elements\nHang only one art piece in your wall as a focal point\n",
+      "price": "6789"
     }
   ],
   "bookedRooms": [
@@ -394,12 +401,11 @@
       "password": "User@2k1",
       "bookedrooms": [
         {
-          "id": "9860",
-          "city": "Delhi",
-          "image": "https://setupmyhotel.com/wp-content/uploads/2024/01/image-4.webp?ezimgfmt=rs:300x250/rscb339/ng:webp/ngcb338",
-          "info": "A room that can accommodate three persons and has been fitted with three twin beds, one double  bed and one twin  bed or two double beds.\nThe room size or area of Triple Rooms is generally between 45 m² to 65 m².",
-          "booked": false,
-          "price": "8379"
+          "id": "dd84",
+          "city": "Chennai",
+          "image": "https://www.nawy.com/blog/wp-content/uploads/2022/07/small-room-design.jpg",
+          "info": "A small room design depends on what’s the room’s purpose, as you will never have the same layout for both living room and bedrooms. However there are some general tips that can be implemented in numerous rooms such as\nAdd lots of shelves to store your belongings and some decorative elements\nHang only one art piece in your wall as a focal point\n",
+          "price": "6789"
         }
       ],
       "booked": true

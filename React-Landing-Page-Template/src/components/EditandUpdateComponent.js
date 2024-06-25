@@ -82,7 +82,7 @@ const EditandUpdateComponent = () => {
     // console.log(adminLogin,showAdminDashboard)
   
   return (
-    <div> <Box display="flex" flexWrap="wrap" gap={2}>
+     <Box display="flex" flexWrap="wrap" gap={2}>
     {cards ? cards.map((card, index) => (
       <CardComponent
         key={index}
@@ -94,7 +94,7 @@ const EditandUpdateComponent = () => {
         setCards={setCards}
       />
     )) : <h1>Loading..</h1>}
-  </Box></div>
+  </Box>
   )
 }
 

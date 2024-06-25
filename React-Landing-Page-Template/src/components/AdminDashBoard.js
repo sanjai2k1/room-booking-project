@@ -20,7 +20,8 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useLogin } from "./LoginContext";
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap"
+import { Button } from "@mui/material";
 
 const StyledLink = styled(Link)(({ theme }) => ({
   textDecoration: "none",
@@ -98,16 +99,12 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 const AdminDashBoard = () => {
-  const logout = ()=>{
-    sessionStorage.clear()
-    setShowadminDashboard(false)
-    
+  const logout = () => {
+    sessionStorage.clear();
+    setShowadminDashboard(false);
 
-
-    navigate("/landing")
-
-
-  }
+    navigate("/landing");
+  };
   const navigate = useNavigate();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -117,18 +114,20 @@ const AdminDashBoard = () => {
     showUserDashboard,
     setShowuserDashboard,
     showAdminDashboard,
-    setShowadminDashboard,adminLogin, setAdminlogin
+    setShowadminDashboard,
+    adminLogin,
+    setAdminlogin,
   } = useLogin();
-  React.useEffect(()=>{
-    if(sessionStorage.getItem("admin")){
-      setLogin(true)
-      setShowuserDashboard(false)
-      setShowadminDashboard(true)
+  React.useEffect(() => {
+    if (sessionStorage.getItem("admin")) {
+      setLogin(true);
+      setShowuserDashboard(false);
+      setShowadminDashboard(true);
     }
-    if(!showAdminDashboard){
-      navigate("/login")
+    if (!showAdminDashboard) {
+      navigate("/login");
     }
-  },[])
+  }, []);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -136,72 +135,104 @@ const AdminDashBoard = () => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-    return (
-      <Box sx={{ display: "flex" }}>
-        <CssBaseline />
-        <AppBar position="fixed" open={open}>
-          <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={handleDrawerOpen}
-              edge="start"
-              sx={{ mr: 2, ...(open && { display: "none" }) }}
+  return (
+    <Box sx={{ display: "flex" }}>
+      <CssBaseline />
+      <AppBar position="fixed" open={open}>
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            edge="start"
+            sx={{ mr: 2, ...(open && { display: "none" }) }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <img
+              src="/images/logo-color.png"
+              alt="Logo"
+              style={{ width: 40, height: 40, marginRight: 10 }}
+            />
+            <Typography variant="h6" noWrap component="div">
+              SNKM ROOMS
+            </Typography>
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={logout}
+              fullWidth
             >
-              <MenuIcon />
-            </IconButton>
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              <img
-                src="/images/logo-color.png"
-                alt="Logo"
-                style={{ width: 40, height: 40, marginRight: 10 }}
-              />
-              <Typography variant="h6" noWrap component="div">
-                SNKM ROOMS
-              </Typography>
-              <Button onClick={logout}>Log Out</Button>
-            </Box>
-          </Toolbar>
-        </AppBar>
-        <Drawer
-          sx={{
+              Log Out
+            </Button>
+          </Box>
+        </Toolbar>
+      </AppBar>
+      <Drawer
+        sx={{
+          width: drawerWidth,
+          flexShrink: 0,
+          "& .MuiDrawer-paper": {
             width: drawerWidth,
-            flexShrink: 0,
-            "& .MuiDrawer-paper": {
-              width: drawerWidth,
-              boxSizing: "border-box",
-            },
-          }}
-          variant="persistent"
-          anchor="left"
-          open={open}
-        >
-          <DrawerHeader>
-            <IconButton onClick={handleDrawerClose}>
-              {theme.direction === "ltr" ? (
-                <ChevronLeftIcon />
-              ) : (
-                <ChevronRightIcon />
-              )}
-            </IconButton>
-          </DrawerHeader>
+            boxSizing: "border-box",
+          },
+        }}
+        variant="persistent"
+        anchor="left"
+        open={open}
+      >
+        <DrawerHeader>
+          <IconButton onClick={handleDrawerClose}>
+            {theme.direction === "ltr" ? (
+              <ChevronLeftIcon />
+            ) : (
+              <ChevronRightIcon />
+            )}
+          </IconButton>
+        </DrawerHeader>
+        <List>
+          <Box sx={{ display: "flex", alignItems: "center",margin:"10px" }}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={()=>navigate("userslist")}
+              fullWidth
+            >
+              Users List
+            </Button>
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "center",margin:"10px" }}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={()=>navigate("roomadd")}
+              fullWidth
+            >
+              Room Add
+            </Button>
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "center",margin:"10px" }}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={()=>navigate("editandupdate")}
+              fullWidth
+            >
+              Edit and Update
+            </Button>
+          </Box>
+        </List>
+      </Drawer>
+      <Main open={open}>
+        <DrawerHeader />
 
-          <List>
-            {["userslist", "roomadd", "editandupdate"].map((text, index) => (
-              <ListItem key={text} disablePadding>
-                <StyledNavLink to={`${text}`} text={`${text}`} />
-              </ListItem>
-            ))}
-          </List>
-        </Drawer>
-        <Main open={open}>
-          <DrawerHeader />
-
-          <Outlet />
-        </Main>
-      </Box>
-    );
-  
+        <Outlet />
+      </Main>
+    </Box>
+  );
 };
 
 export default AdminDashBoard;
