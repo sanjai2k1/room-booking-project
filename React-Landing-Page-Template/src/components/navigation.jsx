@@ -18,6 +18,7 @@ export const Navigation = (props) => {
             <span className="icon-bar"></span>{" "}
             <span className="icon-bar"></span>{" "}
           </button>
+          <img src="/images/logo-color.png" alt="Logo" style={{ width: 40, height: 40, marginRight: 10 }} />
           <a className="navbar-brand page-scroll" href="#page-top">
           SNKM ROOMS
           </a>{" "}

@@ -159,16 +159,15 @@ const AdminDashBoard = () => {
               SNKM ROOMS
             </Typography>
           </Box>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={logout}
-              fullWidth
-            >
-              Log Out
-            </Button>
-          </Box>
+          <Box sx={{ display: "flex", justifyContent: "flex-end", alignItems: "center", width: "100%" }}>
+          <Button
+          variant="contained"
+          color="secondary"
+          onClick={logout}
+          >
+          Log Out
+        </Button>
+        </Box>
         </Toolbar>
       </AppBar>
       <Drawer

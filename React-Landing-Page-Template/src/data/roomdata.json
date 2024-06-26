@@ -132,6 +132,13 @@
       "image": "https://www.nawy.com/blog/wp-content/uploads/2022/07/small-room-design.jpg",
       "info": "A small room design depends on what’s the room’s purpose, as you will never have the same layout for both living room and bedrooms. However there are some general tips that can be implemented in numerous rooms such as\nAdd lots of shelves to store your belongings and some decorative elements\nHang only one art piece in your wall as a focal point\n",
       "price": "6789"
+    },
+    {
+      "id": "0b93",
+      "city": "Chennai",
+      "image": "https://www.bambootravel.co.uk/files/img_cache/53424/1400__1520526723_deluxe-room-cityview1.JPG?1520526746",
+      "info": "Mystery Rooms is a challenging race against the clock where the sole motive is to get yourself out of a themed space before time kicks you! Imagine being locked in a thrill space with your team of 2-8 people and you have exact 60 minutes to use logic, find clues, unravel a mystery and prove the power of team work to conclude a mission.",
+      "price": "50000"
     }
   ],
   "bookedRooms": [
@@ -401,11 +408,28 @@
       "password": "User@2k1",
       "bookedrooms": [
         {
-          "id": "dd84",
+          "id": "7fb2",
+          "city": "Mumbai",
+          "image": "https://setupmyhotel.com/wp-content/uploads/2024/01/image-1.webp?ezimgfmt=rs:300x250/rscb339/ng:webp/ngcb338",
+          "info": " A room assigned to two people. May have one or more  beds.\nThe room size or area of Double Rooms are generally between 40 m² to 45 m².",
+          "booked": false,
+          "price": "3909"
+        },
+        {
+          "id": "9860",
+          "city": "Delhi",
+          "image": "https://setupmyhotel.com/wp-content/uploads/2024/01/image-4.webp?ezimgfmt=rs:300x250/rscb339/ng:webp/ngcb338",
+          "info": "A room that can accommodate three persons and has been fitted with three twin beds, one double  bed and one twin  bed or two double beds.\nThe room size or area of Triple Rooms is generally between 45 m² to 65 m².",
+          "booked": false,
+          "price": "8379"
+        },
+        {
+          "id": "6a82",
           "city": "Chennai",
-          "image": "https://www.nawy.com/blog/wp-content/uploads/2022/07/small-room-design.jpg",
-          "info": "A small room design depends on what’s the room’s purpose, as you will never have the same layout for both living room and bedrooms. However there are some general tips that can be implemented in numerous rooms such as\nAdd lots of shelves to store your belongings and some decorative elements\nHang only one art piece in your wall as a focal point\n",
-          "price": "6789"
+          "image": "https://setupmyhotel.com/wp-content/uploads/2024/01/image-4.webp?ezimgfmt=rs:300x250/rscb339/ng:webp/ngcb338",
+          "info": "A room assigned to four people. May have two or more  beds.\nThe room size or area of Quad Rooms is generally between 70 m² to 85 m².\n\n",
+          "booked": false,
+          "price": "9237"
         }
       ],
       "booked": true
@@ -520,6 +544,22 @@
       "username": "cxdfsdf",
       "password": "Sanjai@2k1",
       "bookedrooms": []
+    },
+    {
+      "id": "2c03",
+      "name": "Nirmal Raj",
+      "contact": "7550064411",
+      "email": "nirmalraj75500@gmail.com",
+      "username": "loros",
+      "password": "Kamal@90789"
+    },
+    {
+      "id": "977b",
+      "name": "Nirmalraj S",
+      "contact": "9876543210",
+      "email": "nirmal@gmail.com",
+      "username": "nirmal",
+      "password": "Nirmal@15"
     }
   ],
   "admins": [
