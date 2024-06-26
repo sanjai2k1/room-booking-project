@@ -1,39 +1,14 @@
 import React from 'react';
 import './Roomcard.css'
-import { Card, CardContent, CardMedia, Typography, CardActions, Button } from '@mui/material';
-
-
- 
-
-
 const RoomCard = ({ room, onBook, isBook }) => (
- 
-    <Card sx={{ maxWidth: 345 }}>
-        <CardMedia
-          component="img"
-          height="140"
-          image={room.image}
-          alt={"img"}
-        />
-        <CardContent>
-         
-          <Typography variant="body1" color="text.secondary">
-            {room.info}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {room.city}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {room.price}
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small" color="primary" onClick={() => onBook(room)}>
-          Book Room
-          </Button>
-        </CardActions>
-      </Card>
-  
+  <div className="card" style={{ width: '18rem', marginBottom: '20px' }}>
+    <img src={room.image} className="card-img-top" alt="Room" />
+    <div className="card-body">
+      <h5 className="card-title">{room.city}</h5>
+      <p className="card-text">{room.info}</p>
+      <button className="btn btn-primary" disabled={isBook} onClick={() => onBook(room)}>Book Room</button>
+    </div>
+  </div>
 );
 
 export default RoomCard;

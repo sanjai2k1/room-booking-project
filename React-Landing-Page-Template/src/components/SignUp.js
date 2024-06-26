@@ -83,7 +83,7 @@ const checkData=(event)=>{
             type="text"
             id="name"
             name="contact"
-            value={formData.name}
+            value={formData.contact}
             onChange={inputChangeHandler}
             required
           />
